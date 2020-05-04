@@ -88,3 +88,21 @@ for (let i = 0; i < students.length; i++) {
 // Отбор: от 18 до 27, мужчина
 let studentSoldier = students.filter(item => item.avgGrades <3 && item.age >= 18 && item.age < 27 && item.gender === 'male');
 //console.log(studentSoldier);
+
+
+// Удалили оценки и курс
+for (let i = 0; i < studentSoldier.length; i++) {
+    delete studentSoldier[i].grades && delete studentSoldier[i].course;
+}
+//console.log(studentSoldier);
+
+// Добавит isReadyForArmy
+for (let i = 0; i < studentSoldier.length; i++) { 
+    let army = true;
+    studentSoldier[i].isReadyForArmy = army;
+}
+//console.log(studentSoldier);
+
+// Создали массив для солдат и отобрали из всех студентов тех у кого isReadyForArmy = true
+let goArmy = students.filter(item => item.isReadyForArmy === true);
+console.log(goArmy);
